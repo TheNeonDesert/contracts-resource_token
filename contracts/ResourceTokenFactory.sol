@@ -11,7 +11,7 @@ contract ResourceTokenFactory {
     function createResourceToken(string memory name, string memory symbol)
         public
     {
-        ResourceToken token = new ResourceToken(name, symbol);
+        ResourceToken token = new ResourceToken(name, symbol, msg.sender);
         ResourceTokens.push(token);
         emit TokenCreated(token);
     }
